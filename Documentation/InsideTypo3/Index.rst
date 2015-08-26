@@ -20,7 +20,7 @@ Copyright 2000-2008, , <info@typo3.org>
 
 This document is published under the Open Content License
 
-available from http://www.opencontent.org/opl.shtml
+available from http://www.opencontent.org/openpub/
 
 The content of this document is related to TYPO3
 

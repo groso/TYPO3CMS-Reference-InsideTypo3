@@ -10,19 +10,19 @@ conf.py:
     - http://typo3.org/api/typo3cms/
     - null
     t3api:
-    - http://docs.typo3.org/typo3cms/CoreApiReference/
+    - https://docs.typo3.org/typo3cms/CoreApiReference/
     - null
     t3cgl:
-    - http://docs.typo3.org/typo3cms/CodingGuidelinesReference/
+    - https://docs.typo3.org/typo3cms/CodingGuidelinesReference/
     - null
     t3install:
-    - http://docs.typo3.org/typo3cms/InstallationGuide/
+    - https://docs.typo3.org/typo3cms/InstallationGuide/
     - null
     t3security:
-    - http://docs.typo3.org/typo3cms/SecurityGuide/
+    - https://docs.typo3.org/typo3cms/SecurityGuide/
     - null
     t3tsconfig:
-    - http://docs.typo3.org/typo3cms/TSconfigReference/
+    - https://docs.typo3.org/typo3cms/TSconfigReference/
     - null
   html_theme_options:
     github_repository: TYPO3-Documentation/TYPO3CMS-Reference-InsideTypo3
