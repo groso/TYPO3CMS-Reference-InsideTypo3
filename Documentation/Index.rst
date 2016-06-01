@@ -12,19 +12,19 @@ Inside TYPO3 CMS
       doc_core_inside
 
 :Version:
-      4.2.0
+      7 LTS
 
 :Language:
       en
 
 :Description:
-      Technical document describing the core of TYPO3, the APIs etc. Includes a section about the Extension API.
+      A deep look into the inner workings and architecture of TYPO3 CMS
 
 :Keywords:
       inside, architecture, security, forAdmins, forDevelopers, forIntermediates
 
 :Copyright:
-      2000-2013
+      2000-2016
 
 :Author:
       Documentation Team
