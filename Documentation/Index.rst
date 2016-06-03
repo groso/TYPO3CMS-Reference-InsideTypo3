@@ -76,7 +76,8 @@ address the task at hand.
    :titlesonly:
    :glob:
 
-   InsideTypo3/Index
+   Introduction/Index
+   BasicInstallation/Index
    CoreArchitecture/Index
    Appendix/Index
    Targets
