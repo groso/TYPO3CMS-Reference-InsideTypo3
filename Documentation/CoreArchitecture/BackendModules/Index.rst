@@ -1,7 +1,3 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
 
 .. include:: ../../Includes.txt
 
@@ -18,7 +14,9 @@ backend. They fall into these categories:
    :titlesonly:
    :glob:
 
+   Structure/Index
    ((generated))/Index
+   TemplateClass/Index
    BackendModuleApi/Index
    Confphp/Index
    TheModuleScript/Index
