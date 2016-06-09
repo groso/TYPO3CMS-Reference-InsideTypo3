@@ -26,13 +26,67 @@ The architecture of an extension is described in detail in the
 :ref:`Core APIs Reference <t3api:extension-architecture>`.
 
 
+.. _extensions-package-manager:
+
+Package Manager
+^^^^^^^^^^^^^^^
+
+Extensions are managed by a Package Manager. The two most visible parts of
+this tool are the :code:`\TYPO3\CMS\Core\Package\PackageManager` PHP class
+and the :file:`typo3conf/PackageStates.php` file.
+
+The :file:`typo3conf/PackageStates.php` file contains a list of all available
+packages and their status (active or inactive).
+
+Here is an extract of this file:
+
+.. code-block:: php
+
+	<?php
+	# PackageStates.php
+
+	# This file is maintained by TYPO3's package management. Although you can edit it
+	# manually, you should rather use the extension manager for maintaining packages.
+	# This file will be regenerated automatically if it doesn't exist. Deleting this file
+	# should, however, never become necessary if you use the package commands.
+
+	return [
+		'packages' => [
+			'core' => [
+				'manifestPath' => '',
+				'composerName' => 'typo3/cms-core',
+				'state' => 'active',
+				'packagePath' => 'typo3/sysext/core/',
+				'classesPath' => 'Classes/',
+				'suggestions' => [],
+			],
+			'extbase' => [
+				'manifestPath' => '',
+				'composerName' => 'typo3/cms-extbase',
+				'state' => 'active',
+				'packagePath' => 'typo3/sysext/extbase/',
+				'classesPath' => 'Classes/',
+				'suggestions' => [],
+			],
+			...
+		],
+		'version' => 4,
+	];
+
+.. warning::
+
+   You should not edit this file yourself, unless you know exactly what you are doing
+   and you also know how to clear the cache manually.
+
+
 .. _extensions-system-main:
 
 Main system extensions
 ^^^^^^^^^^^^^^^^^^^^^^
 
 This section describes the main system extensions, their use and
-what main resources and libraries they contain.
+what main resources and libraries they contain. The system extensions
+are located in directory :file:`typo3/sysext`.
 
 core
   As its name implies, this extension is crucial to the working of TYPO3 CMS.
