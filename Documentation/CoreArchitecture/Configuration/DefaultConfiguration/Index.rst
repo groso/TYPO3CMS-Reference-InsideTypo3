@@ -2,25 +2,15 @@
 .. include:: ../../../Includes.txt
 
 
-.. _configuration-install-tool:
+.. _configuration-default-configuration:
 
-Install Tool
-^^^^^^^^^^^^
+Default configuration
+^^^^^^^^^^^^^^^^^^^^^
 
-The Install Tool provides a convenient user interface for changing
-the global configuration. The "All Configuration" view lists all
-available options and makes them available for editing.
+TYPO3 CMS comes with some default settings, which are defined in
+file :file:`typo3/sysext/core/Configuration/DefaultConfiguration.php`.
 
-When changes are saved, the :file:`LocalConfiguration.php` file
-is updated.
-
-.. figure:: ../../../Images/ConfigurationInstallTool.png
-   :alt: The "All Configuration" view of the Install Tool
-
-
-Note how the configuration options description is taken from the
-inline comments in the :file:`typo3/sysext/core/Configuration/DefaultConfiguration.php`
-file. Check out the code again:
+Here is an extract of that file:
 
 .. code-block:: php
 
@@ -35,3 +25,8 @@ file. Check out the code again:
 		),
 		...
 	);
+
+
+You will probably find it interesting to take a look at that file,
+which also contains values not displayed in the Install Tool and thus
+not easily available for modification.

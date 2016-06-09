@@ -2,6 +2,8 @@
 .. include:: ../Includes.txt
 
 
+.. _installation:
+
 A basic installation
 --------------------
 
