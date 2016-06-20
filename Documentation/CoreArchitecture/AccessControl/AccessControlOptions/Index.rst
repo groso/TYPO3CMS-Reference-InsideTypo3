@@ -1,192 +1,214 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
 
 .. include:: ../../../Includes.txt
-.. include:: Images.txt
 
+
+.. _access-options:
 
 Access Control options
 ^^^^^^^^^^^^^^^^^^^^^^
 
-A fully initialized backend user has the permissions granted to him by
-his own user record and all the user groups he is a member of. These
-permissions go into the following conceptual categories:
+The permissions of fully initialized backend users are the result of the
+rights granted in their own user records and all the user groups they
+belong to.
 
-#. **Access lists** These grant access to backend modules, database
-   tables and fields.
+The permissions are divided into the following conceptual categories:
 
-#. **Mounts** Parts of the page tree and server file system.
+Access lists
+  These grant access to backend modules, database tables and fields.
 
-#. **Page permissions** Access to work on individual pages based on the
-   user id and group ids.
+Mounts
+  Parts of the page tree and server file system.
 
-#. **User TSconfig** A flexible and hierarchical configuration structure
-   defined by TypoScript syntax. This typically describes "soft"
-   permission settings and options for the user which can be used to
-   customize the backend and individual modules.
+Page permissions
+  Access to work on individual pages based on the user id and group ids.
+
+User TSconfig
+  A flexible and hierarchical configuration structure
+  defined by TypoScript syntax. This typically describes "soft"
+  permission settings and options for the user which can be used to
+  customize the backend and individual modules.
+
+  All User TSconfig options are described in the
+  :ref:`TSconfig Reference <t3tsconfig:usertsconfig>`
 
 
-Online help!
-""""""""""""
-
-Before discussing each category, please notice that the online help is
-quite extensive and useful as well. Click one of the Help Icons in
-relation to either users or groups and you can get a full description
-of the table:
-
-|img-36|
-
+.. _access-options-access-lists:
 
 Access lists
 """"""""""""
 
-Access lists are defined in the user groups and includes
+Access lists are defined at group-level. Usage of access lists for defining
+user rights is described in the :ref:`Getting Started tutorial <t3start:setting-up-user-permissions>`.
+The various access lists are described here for reference, with
+additional technical details, where necessary.
 
-#. **Positivelist of main/submodule.** Which modules appear here depends
-   on the access configuration of the individual modules!Access to
-   modules is permitted if 1) the module has no restrictions (the $MCONF
-   array for the module specifies this) or 2) if the user has the module
-   included by the positivelist or 3) is an "admin" user (of
-   course).Users must have access to the main module in order to see the
-   sub-modules inside listed in the menu. So to have "Web > List" in the
-   module menu the user must have access to "Web". Please notice that the
-   core module "Tools" is defined to be for "admin" users only and thus
-   sub-modules to "Tools" will only appear in the menu for "admin" users.
-   **Notice:** As the only one of the access lists, the module list is
-   also available in the be\_users records!
+.. note::
 
-#. **Positivelist of tables that are shown in listings (eg. in
-   Web > List).** Notice: This list has the list of tables for editing (see
-   below) appended. So tables listed for modification need not be
-   included in this list as well!
+   Access list don't apply to admin users. As mentioned before, admin
+   users have access to every single feature of the TYPO3 CMS backend.
 
-#. **Positivelist of tables that may be edited.** The list includes all
-   tables from the $TCA array.
+Modules
+  This is a list of submodules a user may be given access to. Acces to a main
+  module is implicit, as soon as a user has access to at least one of its
+  submodules.
 
-#. **Positivelist of pageTypes (pages.doktype) that can be selected.**
+  Not all submodules appear in this list. It is possible to restrict a
+  submodule to admin users only. This is the case, in particular, of all
+  **ADMIN TOOLS** and **SYSTEM** modules, as well as the **WEB > Template**
+  module.
 
-   Choice of pageTypes (doktype) for a page is associated with:
+  .. note::
 
-   #. An special icon for the page.
+     This is the only access list that is also available for definition
+     at user-level.
 
-   #. Permitted tables on the page (see `$PAGES\_TYPES global variable
-      <#$PAGES_TYPES%7Coutline>`_ ).
+Tables for listing
+  A list of all tables a user may be allowed to read in the backend.
+  Again this in not a list of all tables in the database. Some tables
+  are low level and never appear in the backend at all, even for admin
+  users. Other tables are restricted to admin users and thus do not show
+  up in the access list.
 
-   #. If the pageType is
+  Restricting a table to admin users only is done using the
+  :ref:`TCA property "adminOnly" <t3tca:ctrl-reference-adminonly>`.
 
-      #. Web-page type (doktype<200, can be seen in 'cms' frontend)
+  .. note::
 
-      #. SysFolder type (doktype >=200, can  *not* be seen in 'cms' frontend)
+     All tables that are allowed for modification (see below) are
+     also allowed for read access, so no need to select them in this
+     list as well.
 
-#. **Positivelist of "excludefields" that are not excluded.**
-   "Excludefields" are fields in tables that have the "'exclude' => 1"
-   flag set in $TCA. If such a field is  *not* found in the list of
-   "Allowed Excludefields" then the user cannot edit it! So "Allowed
-   Excludefields" adds  *explicit* permission to edit that field.
+Tables for editing
+  This is exactly the same list of tables as before, but for grating
+  modification rights.
 
-#. **Explicitly allow/deny field values** This list of checkboxes can be
-   used to allow or deny access to specific values of selector boxes in
-   TYPO3 tables. Some selectorboxes is configured to have their values
-   access controlled. In each case the mode can be that access is
-   explicitly allowed or explicitly denied. This list shows all values
-   that are under such access control.
+Page types
+  TYPO3 CMS defines a number of page types. A user can be restricted
+  to access only some of them.
 
-#. **Limit to languages** By default users can edit records regardless of
-   what language they are assigned to. But using this list you can limit
-   the user group members to edit only records localized to a certain
-   language.There is also a similar list of languages for each user
-   record as well.Technical note; To enable localization access control
-   for a table you need to define the field containing the languages.
-   This is done with the TCA/"ctrl" directive "languageField". See "TYPO3
-   Core API" for more details.
+  For a full discussion on page types, please refer to the
+  :ref:`Core APIs reference <t3api:page-types>`.
 
-#. **Custom module options** This item can contain custom permission
-   options added by extensions.
+Excludefields
+  When defining column tables in TCA, it is possible to set the
+  :ref:`"exclude" property <t3tca:columns-properties-exclude>` to "1".
+  This makes it so that the field is hidden to users by default.
+  Access to it must be explicitly granted in this access list.
 
-This screendump shows how the addition of elements to the access lists
-can be done for a user group. Notice that the "Include Access Lists"
-flag is set - if this is not set, the access lists of a user group is
-ignored!
+Explicitly allow/deny field values
+  When a field offers a list of options to select from, it is possible
+  to tell TYPO3 CMS that access to these options is restricted and should
+  be granted explicitly. Such fields and their values appear here.
 
-|img-37|
+  The related TCA property is :ref:`"authMode" <t3tca:columns-select-properties-authmode>`.
 
-The lists of possible values for access lists are automatically
-updated when new tables, fields, modules and doktypes are added by
-extensions!
+Limit to languages
+  By default users can edit records regardless of what language they are assigned to.
+  Using this list it is possible to restrict users to working only in selected
+  languages.
 
 When a user is a member of more than one group, the access lists for
 the groups are "added" together.
 
 
+.. _access-options-mounts:
+
 Mounts
 """"""
 
-TYPO3 natively supports two kinds of hierarchical tree structures: The
-page tree (Web module) and the folder tree (File module). Each tree is
-generated based on the  *mount points* configured for the user. So a
-page tree is drawn from the "DB Mount" which is one or more page ids
-telling the core from which "root-page" to draw the tree(s). Likewise
-is the folder tree drawn based on filemounts configured for the user.
+TYPO3 CMS natively supports two kinds of hierarchical tree structures:
+the page tree (typically visible in the **WEB** module) and the folder
+tree (typically visible in the **FILE** module). Each tree is
+generated based on the *mount points* configured for the current user. So a
+page tree is drawn from the *DB Mounts* which are one or more page ids
+telling the core from which "start page" to draw the tree(s). Likewise
+is the folder tree drawn based on *filemounts* configured for the user.
 
 **DB mounts** (page mounts) are easily set by simply pointing out the
-page that should be mounted for the user:
+page that should be mounted for the user (at user or group-level):
 
-|img-38|
+.. figure:: ../../../Images/AccessDbMounts.png
+   :alt: The DB mounts for group "Editors"
 
-If this page, 'Root page A' is mounted for a user, he will see this
-page tree:
 
-|img-39|
+This is what the user will see:
 
-**Notice:** A DB mount will appear  *only if the page permissions
-allows the user read access* to the mounted page (and subpages) -
-otherwise no tree will appear!
+.. figure:: ../../../Images/AccessUserPageTree.png
+   :alt: Only selected pages are accessible to the user
 
-**File mounts** are a little more difficult to set up. First you have
-to create a "Filemount" record in the root:
 
-|img-40|
+.. warning::
 
-Then you have to assign that mount to the user or group:
+   A DB mount will appear only if the :ref:`page permissions <access-options-page-permissions>`
+   allow the user at least read access to the mounted page (and subpages).
+   Otherwise nothig will appear at all!
 
-|img-41|
+**File Mounts** are a little more difficult to set up, as they
+involve several steps. First of all, you need to have at least
+one file storage. By default, you will always have one, pointing
+to the :file:`fileadmin` directory. It is created by TYPO3 CMS
+upon installation.
 
-If the filemount was successfully mounted, it will appear like this:
+.. note::
 
-|img-42|
+   The :file:`fileadmin` directory is the default place where
+   TYPO3 CMS expects media resources to be located. It can be
+   changed using the global configuration option
+   :code:`$GLOBALS['TYPO3_CONF_VARS']['BE']['fileadminDir']`.
 
-**Notice:** A filemount will work only if the mounted path is
-accessible for PHP on the system. Further the path being mounted must
-be found within TYPO3\_CONF\_VARS[BE][lockRootPath] (for absolute
-paths) or within PATH\_site+TYPO3\_CONF\_VARS[BE][fileadminDir] (for
-relative paths) - otherwise the path will not be mounted.
+.. figure:: ../../../Images/AccessFileStorage.png
+   :alt: The default file storage points to "fileadmin"
 
-**General notes on mountpoints**
 
-DB and File mounts can be set for both the user and group records.
-Having more than one DB or File mount will just result in more than
-one mountpoint appearing in the trees. However the backend users
-records have two flags which determines whether the DB/File mounts of
-*the usergroups* of the user will be mounted as well! Make sure to set
-these flags if mountpoints from the member groups should be mounted in
-addition to the "private" mountpoints set for the user:
+A *File Storage* is essentially defined by a *File Driver*
+and the path to which it points.
 
-|img-43|
+Next we can create a *File Mount* record (on the root page),
+which refers to a File Storage:
 
-"Admin" users will not need a mountpoint being set - they have by
-default the page tree root mounted which grants access to all branches
-of the tree. Further the "fileadmin/" dir will be mounted by default
-for admin users (provided that TYPO3\_CONF\_VARS[BE][fileadminDir] is
-set to "fileadmin/" which it is by default).
+.. figure:: ../../../Images/AccessCreateFilemount.png
+   :alt: A file mount poiting to the "user_upload" directory
 
+
+When defining a File Mount, you can point to a specific folder
+within the chosen File Storage. Finally the mount is assigned
+to a user or group:
+
+.. figure:: ../../../Images/AccessAssignFilemount.png
+   :alt: The file mount is assigned to the "Editors" group
+
+
+After a successful configuration, the file mount will appear to
+the user:
+
+.. figure:: ../../../Images/AccessUserFileTree.png
+   :alt: The file tree as visible by the user
+
+
+DB and File Mounts can be set for both the user and group records.
+Having more than one DB or File Mount will just result in more than
+one mount point appearing in the trees. However the backend users
+records have two flags which determine whether the DB/File Mounts of
+*the groups* the user belongs to will be mounted as well! This is
+the default behaviour. So make sure to unset these flags if users
+should see only their "private" mount points and not those from their
+groups:
+
+.. figure:: ../../../Images/AccessMountFromGroups.png
+   :alt: By default BD and File Mounts from groups are set for member users
+
+
+"Admin" users do not need mount points. As always, they have access
+to every part of the installation.
+
+
+.. _access-options-page-permissions:
 
 Page permissions
 """"""""""""""""
 
-Page permissions is designed to work like file permissions on UNIX
-systems: Each page record has an owner user and group and then
+Page permissions are designed to work like file permissions on UNIX
+systems. Each page record has an owner user and group and then
 permission settings for the owner, the group and "everybody". This is
 summarized here:
 
@@ -196,93 +218,53 @@ summarized here:
   empty user/group (except "admin" users).
 
 - Every page has permissions for owner, group and everybody in these
-  five categories:
+  five categories (next to the label is the corresponding value):
 
-1 Show: See/Copy page and the page content.
+  Show (1)
+    See/Copy page and the page content.
 
-16 Edit page content: Change/Add/Delete/Move page content.
+  Edit page content (16)
+    Change/Add/Delete/Move page content.
 
-2 Edit page: Change/Move the page, eg. change title, startdate,
-hidden.
+  Edit page (2)
+    Change/Move the page, eg. change title, startdate, hidden flag.
 
-4 Delete page: Delete the page and page content.
+  Delete page (4)
+    Delete the page and page content.
 
-8 New pages: Create new pages under the page.
+  New pages (8)
+    Create new pages under the page.
 
-(Definition: "Page content" means all records (except from the
-"pages"-table) related to that page.)
+.. note::
 
-Page permissions are set and viewed by the module "Access":
+   Here "Page content" means all records related to that page,
+   except other pages.
 
-|img-44|
+Page permissions are set and viewed with the module **SYSTEM > Access** module:
 
-Editing permissions for a page is done by clicking the edit icon:
+.. figure:: ../../../Images/AccessAccessModule.png
+   :alt: The Access module and its overview of page rights and owners
 
-|img-45|
 
-Here you can set owner user/group and the permission matrix for the
-five categories / owner, group, everybody. Notice that permissions can
-be set recursively if you select that option in the selector box just
-above the "Save"/"Abort" buttons.
+Editing permissions is described in details in the
+:ref:`Getting Started Tutorial <t3start:page-permissions>`.
 
-A user must be "admin"  *or* the owner of a page in order to edit its
+A user must be "admin" *or* the owner of a page in order to edit its
 permissions.
 
-**New pages and records.**
+When a user creates new pages in TYPO3 CMS they will by default get the
+creating user as owner. The owner group will be set to the *first
+listed user group* configured for the users record (if any). These defaults
+can be changed through :ref:`Page TSconfig <t3tsconfig:pagetsconfig>`.
 
-When a user creates new pages in TYPO3 they will by default get the
-creating user as owner. The owner group will be set to the  *first
-listed user group* configured for the users record (if any) (available
-in $BE\_USER->firstMainGroup). These defaults can be changed through
-:ref:`Page TSconfig <t3tsconfig:pagetsconfig>` .
 
-If you wish to change the default values user/group/everybody it can
-be done by TYPO3\_CONF\_VARS[BE][defaultPermissions] (please read
-comments in the source code of config\_defaults.php).
-
+.. _access-options-user-tsconfig:
 
 User TSconfig
 """""""""""""
 
 User TSconfig is a hierarchical configuration structure entered in
 plain text TypoScript. It can be used by all kinds of applications
-inside of TYPO3 to retrieve customized settings for users which
+inside of TYPO3 CMS to retrieve customized settings for users which
 relates to a certain module or part. The options available are
 described in the :ref:`document TSconfig <t3tsconfig:usertsconfig>` .
-
-A good example is to look at the script 'alt\_main.php' in which the
-shortcut frame is displayed in the frameset only if the User TSconfig
-option "options.shortcutFrame" is true::
-
-   if ($GLOBALS['BE_USER']->getTSConfigVal('options.shortcutFrame')) {....
-
-Likewise other scripts and modules in TYPO3 is able to acquire a value
-from the User TSconfig field.
-
-So if we wanted to enable the shortcut frame for a user we would set
-the TSconfig field of the user record (or any member group!) like
-this:
-
-|img-46|
-
-... or alternatively this (which is totally the same, just another way
-of entering values in TypoScript syntax):
-
-|img-47|
-
-**Precedence order of TSconfig:**
-
-The TSconfig of the users  *own* record (be\_users) will be included
-*last* so any option in the "be\_users" TSconfig field can override
-options from the groups or the default TSconfig which was previously
-set.
-
-Further notice that the TYPO3\_CONF\_VARS[BE][defaultUserTSconfig]
-value can be configured with default TSconfig for all be\_users.
-
-"Admin" users further has a minor set of default TSconfig as well::
-
-   admPanel.enable.all = 1
-   setup.default.deleteCmdInClipboard = 1
-   options.shortcutFrame=1
-

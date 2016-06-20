@@ -1,10 +1,8 @@
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
 
 .. include:: ../../Includes.txt
 
+
+.. _access:
 
 Access Control
 --------------
@@ -17,10 +15,9 @@ Access Control
 
    UsersAndGroups/Index
    Roles/Index
-   Ldap/Index
    AccessControlOptions/Index
    OtherOptions/Index
    MoreAboutFileMounts/Index
-   SettingUpANewUser/Index
    OverviewOfUsers/Index
+   Authentication/Index
 
