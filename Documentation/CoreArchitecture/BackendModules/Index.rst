@@ -2,11 +2,13 @@
 .. include:: ../../Includes.txt
 
 
+.. _backend-modules:
+
 Backend Modules
 ---------------
 
-TYPO3 offers a number of ways to attach custom functionality to the
-backend. They fall into these categories:
+TYPO3 CMS offers a number of ways to attach custom functionality to the
+backend. They are described in this chapter.
 
 
 .. toctree::
@@ -15,13 +17,8 @@ backend. They fall into these categories:
    :glob:
 
    Structure/Index
-   ((generated))/Index
    TemplateClass/Index
    BackendModuleApi/Index
-   Confphp/Index
-   TheModuleScript/Index
-   BackendModulesUsingTypo3Modphp/Index
    FunctionMenuModules/Index
-   CreatingNewBackendScripts/Index
-   InitializeTypo3BackendInAPhpShellScript(cliMode)/Index
+   CliScripts/Index
 
