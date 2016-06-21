@@ -1,5 +1,8 @@
+
 .. include:: ../../Includes.txt
 
+
+.. _database:
 
 Database
 --------
@@ -11,6 +14,6 @@ Database
    :glob:
 
    Introduction/Index
-   RelationalDatabaseStructure/Index
-   UpgradeTableFieldDefinitions/Index
+   DatabaseStructure/Index
+   UpgradeDataDefinition/Index
 
