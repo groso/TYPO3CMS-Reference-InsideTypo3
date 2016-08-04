@@ -19,8 +19,7 @@ Core Architecture
    VersioningAndWorkspaces/Index
    Localization/Index
    ContextSensitiveHelp/Index
-   SecurityInTypo3/Index
-   FilesAndDirectories/Index
+   Security/Index
    CoreModules/Index
    GeneralInterfaceFeatures/Index
 
