@@ -44,13 +44,13 @@ Each file is registered with :code:`$TCA_DESCR` using a key. For a
 database table, this is simple the table name. For backend modules you
 can use the following syntax:
 
-.. code-block:: plain
+.. code-block:: text
 
 	_MOD_[main module]_[module name]
 
 For the **WEB > Info** module, the key is:
 
-.. code-block:: plain
+.. code-block:: text
 
 	_MOD_web_info
 

@@ -177,7 +177,7 @@ seeAlso
 
   **Example:**
 
-  .. code-block:: plain
+  .. code-block:: text
 
      pages:starttime , pages:endtime , tt\_content:header , Link to TYPO3.org \| http://typo3.org/
 
