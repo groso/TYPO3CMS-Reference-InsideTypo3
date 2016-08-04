@@ -78,6 +78,5 @@ address the task at hand.
    Introduction/Index
    BasicInstallation/Index
    CoreArchitecture/Index
-   Appendix/Index
    Targets
 
