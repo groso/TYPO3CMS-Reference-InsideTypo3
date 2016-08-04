@@ -20,5 +20,4 @@ Core Architecture
    Localization/Index
    ContextSensitiveHelp/Index
    Security/Index
-   GeneralInterfaceFeatures/Index
 
