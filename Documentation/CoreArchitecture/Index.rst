@@ -18,7 +18,7 @@ Core Architecture
    Database/Index
    VersioningAndWorkspaces/Index
    Localization/Index
-   ContextSensitiveHelp(csh)/Index
+   ContextSensitiveHelp/Index
    SecurityInTypo3/Index
    FilesAndDirectories/Index
    CoreModules/Index
