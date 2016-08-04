@@ -1,6 +1,8 @@
 .. include:: ../../Includes.txt
 
 
+.. _security:
+
 Security in TYPO3
 -----------------
 
