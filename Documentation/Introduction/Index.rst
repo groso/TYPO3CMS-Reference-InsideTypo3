@@ -62,9 +62,9 @@ consider that as well!
 What's new
 ^^^^^^^^^^
 
-This version is updated for TYPO3 CMS 7.
-
-*(currently being edited)*
+This version has been fully updated for TYPO3 CMS 7. This manual had not been
+updated in a very long time, which means it is impossible to list
+all changes. Let's just consider it a clean slate for now.
 
 
 .. _feedback:
