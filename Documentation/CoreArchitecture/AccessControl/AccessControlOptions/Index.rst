@@ -140,7 +140,7 @@ This is what the user will see:
 
    A DB mount will appear only if the :ref:`page permissions <access-options-page-permissions>`
    allow the user at least read access to the mounted page (and subpages).
-   Otherwise nothig will appear at all!
+   Otherwise nothing will appear at all!
 
 **File Mounts** are a little more difficult to set up, as they
 involve several steps. First of all, you need to have at least
