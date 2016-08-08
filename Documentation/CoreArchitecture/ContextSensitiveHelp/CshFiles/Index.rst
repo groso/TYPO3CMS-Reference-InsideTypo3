@@ -79,7 +79,7 @@ divided into two parts, separated by a dot (:code:`.`). For
 a database table, the first part is the name of the field
 (for a backend module, an arbitrary but significant string).
 The second part is a so-called "type key". The list of
-type keys and their syntax is decribed below.
+type keys and their syntax is described below.
 
 The first part of the key may be absent (as in the first entries
 in the above example). This represents a general help text. This
