@@ -37,7 +37,7 @@ Perform base setup
 
   - :code:`SystemEnvironmentBuilder::checkMainPathsExist()` checks if
     expected paths like :file:`typo3` or :file:`index.php` exist. If that
-    is not the case, the process will quit immediatly.
+    is not the case, the process will quit immediately.
 
   - :code:`SystemEnvironmentBuilder::initializeGlobalVariables()` sets
     some global variables as empty arrays.
