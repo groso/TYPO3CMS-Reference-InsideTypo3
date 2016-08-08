@@ -106,7 +106,7 @@ roles. Some of the most common are:
   a table for a central registry ("sys\_registry") and quite a few others.
 
 All these tables are not subject to the uid/pid constraint mentioned
-above, but they may have such fields if it is convenient for whatewer
+above, but they may have such fields if it is convenient for whatever
 reason.
 
 There are no way such tables can be managed via the TYPO3 CMS
