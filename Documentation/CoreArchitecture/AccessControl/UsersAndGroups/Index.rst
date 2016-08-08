@@ -19,7 +19,7 @@ the table "be\_users". This record contains the username and password,
 other meta data and some permissions settings.
 
 .. figure:: ../../../Images/AccessBackendUser.png
-   :alt: Part of the editing form for user "simple\_editor" of the Introduction Pacakge
+   :alt: Part of the editing form for user "simple\_editor" of the Introduction Package
 
 
 The above screenshot shows a part of the editing form for the backend
