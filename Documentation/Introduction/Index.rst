@@ -52,7 +52,7 @@ The goal is to take you "under the hood" of TYPO3 CMS. To make the
 principles and opportunities clear and less mysterious. To educate you
 to help continue the development of TYPO3 along the already
 established lines so we will have a consistent CMS application in a
-future as well.And hopefully my teaching on the deep technical level
+future as well. And hopefully my teaching on the deep technical level
 will enable you to educate others higher up in the "hierarchy". Please
 consider that as well!
 
