@@ -20,7 +20,7 @@ provides a general view class :code:`TYPO3\CMS\Backend\View\BackendTemplateView`
 which provides common features for all backend modules, like the management
 of the action menu or the registration of docheader buttons.
 
-This view class gives acces to the :code:`\TYPO3\CMS\Backend\Template\ModuleTemplate`
+This view class gives access to the :code:`\TYPO3\CMS\Backend\Template\ModuleTemplate`
 class which is - more or less - the old backend module template,
 cleaned up and refreshed. This class performs a number of basic
 operations for backend modules, like loading base JS libraries,
