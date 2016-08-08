@@ -23,7 +23,7 @@ other meta data and some permissions settings.
 
 
 The above screenshot shows a part of the editing form for the backend
-user "simple\_editor" from the Introduction Pacakge. If you have an Introduction
+user "simple\_editor" from the Introduction Package. If you have an Introduction
 Package available, you can check further properties of that user. It is
 part of the "Simple editors" group, has a name, an email address and
 its default language for the backend is English.
