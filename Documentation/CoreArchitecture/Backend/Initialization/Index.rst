@@ -77,13 +77,15 @@ More configuration
 After all that the :code:`Bootstrap::run()` method is called, which
 basically dispatches the request to the right handler.
 
-The request handler has its own :code:`boot()` method, which performs
-yet more initialization and set up as needed. A general request to the
-backend will typically go through such important steps like:
 
-- checking backend access (is it locked? does it have proper SSL setup?)
-
-- loading the full :ref:`TCA <t3tca:start>`
-
-- verifying and initializing the backend user
+Initialization of the TYPO3 Backend
+  The backend request handler has its own :code:`boot()` method, which performs
+  yet more initialization and set up as needed. A general request to the
+  backend will typically go through such important steps like:
+  
+  - checking backend access (is it locked? does it have proper SSL setup?)
+  
+  - loading the full :ref:`TCA <t3tca:start>`
+  
+  - verifying and initializing the backend user
 
