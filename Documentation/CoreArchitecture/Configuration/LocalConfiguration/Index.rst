@@ -152,3 +152,5 @@ MAIL
 
 SYS
   General options which may affect both the frontend and the backend.
+
+Details on the various configuration-options can be found in the install-tool as well as the TYPO3-source at :file:`typo3/sysext/core/Configuration/DefaultConfiguration.php`. The documentation shown in the install-tool is automatically extracted from those comments of DefaultConfiguration.php.
