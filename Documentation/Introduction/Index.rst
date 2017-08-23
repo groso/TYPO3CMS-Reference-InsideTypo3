@@ -20,7 +20,7 @@ framework for management of database content. The core of TYPO3 CMS
 delivers a set of principles for storage of this content, user access
 management, editing of the content, uploading and managing files etc.
 Many of these principles are expressed as an API (Application
-Programmers Interface) for use in *extensions* which ultimately
+Programming Interface) for use in *extensions* which ultimately
 add most of the real functionality.
 
 .. figure:: ../Images/Typo3CmsStructure.png
