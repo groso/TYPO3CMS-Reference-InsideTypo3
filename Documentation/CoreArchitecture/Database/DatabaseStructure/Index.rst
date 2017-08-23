@@ -13,7 +13,7 @@ Database Structure
 Requirements for TYPO3 managed tables
 """""""""""""""""""""""""""""""""""""
 
-The database tables used by TYPO3 CMS can be divided in two
+The database tables used by TYPO3 CMS can be divided into two
 rough categories: those that are used by the system and are
 invisible to the users and those that will be managed via the
 TYPO3 CMS backend.
