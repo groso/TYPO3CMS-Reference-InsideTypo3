@@ -29,7 +29,7 @@ This defines which autoloader to use.
 =====================
 
 An instance of :php:`\TYPO3\CMS\Core\Core\SystemEnvironmentBuilder` is
-created. This class in turn defines a large number constants and global
+created. This class in turn defines a large number of constants and global
 variables. If you want to have an overview of these base values, it is
 worth taking a look into the following methods:
 
