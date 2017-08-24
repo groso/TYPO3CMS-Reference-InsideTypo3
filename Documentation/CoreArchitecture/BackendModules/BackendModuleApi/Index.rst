@@ -12,7 +12,7 @@ Backend Module API
 Registering new modules
 """""""""""""""""""""""
 
-Modules add by extensions are registered in the :file:`ext_tables.php`
+Modules added by extensions are registered in the :file:`ext_tables.php`
 using the following API:
 
 .. code-block:: php
