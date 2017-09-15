@@ -47,7 +47,7 @@ Function Menu modules are registered in an extension's
          ...
      }
 
-Because a Function Menu module live in the environment of its host backend
+Because a Function Menu module lives in the environment of its host backend
 module, it does not need a full declaration like backend modules.
 It is just a class that is called when the menu item is selected.
 
