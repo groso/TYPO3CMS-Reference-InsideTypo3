@@ -23,7 +23,7 @@ Top bar
   :code:`$GLOBALS['TYPO3_CONF_VARS']['BE']['toolbarItems']`.
 
 Module menu
-  This is the main navigation. All modules are structures in main
+  This is the main navigation. All modules are structured in main
   modules (which can be collapsed) and submodules which is where
   the action really happens.
 
@@ -54,11 +54,11 @@ Docheader
   contain a drop-down menu called the "Function menu", which allows to
   navigate into the various functions offered by the module. When editing
   it will also contain all the buttons necessary for saving, closing or
-  reverting. It may contain additional buttons for makings shortcuts
+  reverting. It may contain additional buttons for shortcuts
   or any specific feature needed by the module.
 
 Content area
-  This is the actual work area. Any information to display or stuff
+  This is the actual work area. Any information to show or stuff
   to edit will be displayed here.
 
 Contextual menus
