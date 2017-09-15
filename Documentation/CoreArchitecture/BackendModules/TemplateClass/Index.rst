@@ -92,7 +92,7 @@ As such, the Layout may be as simple as (again from "beuser"):
 	<f:render section="headline" />
 	<f:render section="content" />
 
-and the actual Template needs render only the title and the content.
+and the actual Template needs to render the title and the content only.
 For example, here is an extract of the "Index" action template of
 the "beuser" extension:
 
