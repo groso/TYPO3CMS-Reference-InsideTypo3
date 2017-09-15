@@ -50,7 +50,7 @@ The last part of the declaration ("scheduler") is the key with which
 the script can be called.
 
 The registration takes a closure which instantiates the corresponding
-class and class the :code:`run()` method. The second argument is the
+class and calls the :code:`run()` method. The second argument is the
 backend user that TYPO3 CMS should use when running that script
 (here "_cli_scheduler"). If that user is not present in the system,
 the script will fail. It will also fail if that user is "Admin".
@@ -58,7 +58,7 @@ the script will fail. It will also fail if that user is "Admin".
 The script should simply implement the :code:`run()` method and perform
 its logic according to the arguments received on the command line.
 
-The dispatcher is run using:
+The dispatcher is run by using:
 
 .. code-block:: shell
 
@@ -98,7 +98,7 @@ extension):
 
 The class itself must extend the :code:`\TYPO3\CMS\Extbase\Mvc\Controller\CommandController`
 class. Each action that should be available from the command line must
-be name following the pattern "[action name]Command". The PHPdoc information
+be named following the pattern "[action name]Command". The PHPdoc information
 is directly used as help text (description of the action, what arguments it
 takes).
 
@@ -126,7 +126,7 @@ extension:
          }
      }
 
-This command would be called using:
+This command would be called by using:
 
 .. code-block:: shell
 
