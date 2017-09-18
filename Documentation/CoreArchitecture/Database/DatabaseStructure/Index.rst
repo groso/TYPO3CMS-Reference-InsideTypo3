@@ -69,7 +69,7 @@ The "pages" table has a very special status. It is the backbone of
 TYPO3 CMS, as it provides the hierarchical page structure into which
 all other TYPO3 CMS managed records are positioned.
 
-Standard pages are quite litterally web site pages in the frontend.
+Standard pages are quite literally web site pages in the frontend.
 But they can also be storage spaces in the backend, very much like
 folders on a hard disk. For any record, the "pid" field contains
 a reference to the page where that record is stored. For pages,
@@ -90,7 +90,7 @@ The tables which are not managed via the TYPO3 CMS backend fill various
 roles. Some of the most common are:
 
 - MM relations: when tables are related using a many-to-many relationship,
-  a table must hold these relations. Examples are the table storing
+  another table must hold these relations. Examples are the table storing
   relations between categories and categorized records
   ("sys\_category\_record\_mm") or the table storing relations
   between files and their various usages in pages, content elements, etc.
@@ -101,7 +101,7 @@ roles. Some of the most common are:
 - cache: when a cache is defined as using the database as a cache backend,
   TYPO3 CMS will automatically create the relevant cache tables.
 
-- system information: there exists tables storing information about sessions,
+- system information: there exist tables storing information about sessions,
   both frontend and backend ("fe\_sessions" and "be\_sessions" respectively),
   a table for a central registry ("sys\_registry") and quite a few others.
 
@@ -110,6 +110,6 @@ above, but they may have such fields if it is convenient for whatever
 reason.
 
 There are no way such tables can be managed via the TYPO3 CMS
-backend unless a specific modules provides a form of access to it.
+backend unless a specific module provides a form of access to it.
 For example, the **SYSTEM > Log** module provides an interface
 to browse records from the "sys\_log" table.
