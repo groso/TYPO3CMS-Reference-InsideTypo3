@@ -45,7 +45,7 @@ grouped by type: creating new tables, adding new fields to existing
 tables, altering existing fields, dropping unused tables and fields.
 
 You can choose which updates you want to perform. You can even
-elect not to create new fields and tables, although that will
+decide not to create new fields and tables, although that will
 very likely break your installation.
 
 If the database matches exactly with the combined requirements of core
