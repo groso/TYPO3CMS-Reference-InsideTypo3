@@ -75,10 +75,8 @@ folders on a hard disk. For any record, the "pid" field contains
 a reference to the page where that record is stored. For pages,
 the "pid" fields behaves as a reference to their parent pages.
 
-The special "root" pages corresponds to a pid of 0 (zero).
-Only admin-users can access records in the root. Also records from
-tables can normally only be created on a real page. They must
-be :ref:`explicitly configured to reside in the root page <t3tca:ctrl-reference-rootlevel>`.
+The special "root" page has three unique properties: its pid is 0 (zero),
+only admin-users can access records on it and these records have to be :ref:`explicitly configured to reside in the root page <t3tca:ctrl-reference-rootlevel>`. (Usually table records may only be created on a real page.) 
 
 
 .. _database-structure-other-tables:
