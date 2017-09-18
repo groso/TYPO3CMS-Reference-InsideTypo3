@@ -47,7 +47,7 @@ There are certain requirements for such managed tables:
 
     - A "deleted" field which tells TYPO3 CMS that the record is deleted
       (in effect implementing a "soft delete" feature; records with a
-      "deleted" field are truly deleted from the database).
+      "deleted" field are not truly deleted from the database).
 
     - A "hidden" or "disabled" field for records which exist but should not
       be used (e.g. disabled backend users, content not visible in the frontend).
